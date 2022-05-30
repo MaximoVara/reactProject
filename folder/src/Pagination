@@ -1,0 +1,57 @@
+// function Items({ currentItems }) {
+// return (
+//     <>
+//     <ul>
+//         {currentItems &&
+//         currentItems.map(({ title, eventURL, date, time, address }) => (
+//             <li>
+//             <h3>Title:  {title}</h3>
+//             <h3>Event URL: {eventURL}</h3>
+//             <h3>Date Time: {date} {time}</h3>
+//             <h3>Location: {address}</h3>
+//             <h3></h3>
+//             </li>
+//         ))}
+//     </ul>
+//     </>
+// );
+// }
+
+// function PaginateItems( {itemsPerPage} ){
+//     const [currentItems, setCurrentItems] = useState(null);
+//     const [pageCount, setPageCount] = useState(0);
+//     const [itemOffset, setItemOffset] = useState(0);
+
+//     useEffect(() => {
+//         const endOffset = itemOffset + itemsPerPage;
+//         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+//         console.log(myresults)
+//         setCurrentItems(myresults.slice(itemOffset, endOffset));
+//         setPageCount(Math.ceil(myresults.length / itemsPerPage));
+//     }, [itemOffset, itemsPerPage]);
+
+//     // Invoke when user click to request another page.
+//     const handlePageClick = (event) => {
+//         const newOffset = (event.selected * itemsPerPage) % myresults.length;
+//         console.log(
+//         `User requested page number ${event.selected}, which is offset ${newOffset}`
+//         );
+//         setItemOffset(newOffset);
+//     };
+
+//     return (
+//         <>
+//         <Items currentItems={currentItems} />
+//         <ReactPaginate
+//             breakLabel="..."
+//             nextLabel="next >"
+//             onPageChange={handlePageClick}
+//             pageRangeDisplayed={10}
+//             pageCount={pageCount}
+//             previousLabel="< previous"
+//             renderOnZeroPageCount={null}
+//         />
+//         <MyGoogleMap markers={currentItems} />
+//         </>
+//     );
+// }

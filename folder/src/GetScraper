@@ -1,0 +1,55 @@
+// function GetScraper(){
+//   const [data, setData] = useState( null );
+//   const [myresults, setResults] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     // Gets data from the backend.
+//     async function fetchAllResults(){
+//       const urls = [
+//         "http://localhost:9000/vi/1",
+//         "http://localhost:9000/vi/2"
+//       ]
+
+//       // Get the response from page 1 and page 2.
+//       const allRequests = urls.map(url => 
+//         fetch(url)
+//         .then((response) => {
+//           if (!response.ok) {
+//             throw new Error(
+//               `This is an HTTP error: The status is ${response.status}`
+//             );
+//           }
+//           return response.json();
+//         })
+//         .then(async json => {
+//           const latlong = await json.forEach
+//         })
+//       );
+
+//       // Reset results in case the page loads in a funky way.
+//       setResults([]);
+      
+//       // Collect results from both pages and combine then into a single array. 
+//       (Promise.all(allRequests)).then(arrayOfResponses =>{
+//         arrayOfResponses.forEach(completeResponse => 
+//           setResults( myresults => [...myresults, ...(completeResponse.results)])
+//         );
+//         setError(null);
+//       })
+//       .catch((err) => {
+//         setError(err.message);
+//         console.log(err.message);
+//       })
+//       .finally(() => {
+//         setLoading(false)
+//       });
+      
+//       console.log(myresults)
+//     }
+
+//     // Run function to get the array we want. 
+//     fetchAllResults();
+//   }, [])
+// }
